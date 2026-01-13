@@ -103,9 +103,9 @@ export const getClassRock = () => {
       adv: mapToPath('adv', advList),
       news: mapToPath('news', newsListSorted)
     };
-  },
+  };
 
-  getSilver: () => {
+  export const getSilver = () => {
     const bp = 'RADIO_16_SILVERLAKE';
     return {
       musicas: [
@@ -193,10 +193,10 @@ export const getClassRock = () => {
       },
       adv: mapToPath('adv', advList),
       news: mapToPath('news', newsListSorted)
-    };
-  },
+  };
+};
 
-  getRock: () => {
+export const getRock = () => {
     const bp = 'RADIO_18_90S_ROCK';
     return {
       musicas: [
@@ -251,10 +251,10 @@ export const getClassRock = () => {
       },
       adv: mapToPath('adv', advList),
       news: mapToPath('news', newsListSorted)
-    };
-  },
+  };
+};
 
-  getKult: () => {
+export const getKult = () => {
     const bp = 'RADIO_34_DLC_HEI4_KULT';
     return {
       musicas: [
@@ -342,9 +342,7 @@ export const getClassRock = () => {
     };
   },
   
-  // Objeto padrão para facilitar a importação
-  default: null
-};
+
 
 // Exportando padrão para facilitar
 export default { getClassRock, getSilver, getRock, getKult };
