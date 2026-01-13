@@ -340,9 +340,7 @@ export const getKult = () => {
       adv: [],
       news: []
     };
-  },
-  
+}; // <--- FECHA A FUNÇÃO AQUI COM PONTO E VÍRGULA
 
-
-// Exportando padrão para facilitar
+// Exportação Final (sem lixo anterior)
 export default { getClassRock, getSilver, getRock, getKult };
