@@ -154,9 +154,14 @@
     };
     
     document.getElementById('btnStart').addEventListener('click', () => {
-      statusEl.textContent = '🎧 Transmitindo...';
-      capa.classList.add('playing');
-    });
+  statusEl.textContent = '🎧 Transmitindo...';
+  capa.classList.add('playing');
+  
+  // ADICIONE ESTA LINHA ABAIXO:
+  if (window.__RADIO) {
+    window.__RADIO.startRadio();
+  }
+});
 
     window.updateRadioUI = (channelId) => {
       document.querySelectorAll('.radio-option').forEach(el => {
