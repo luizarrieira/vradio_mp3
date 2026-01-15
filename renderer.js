@@ -298,22 +298,26 @@ class RadioStation {
     
     let seqType;
     
+    // Configuração de probabilidades (Soma dos pesos = 100 para representar %)
     if (this.id === 'kult') {
         seqType = weightedPick([
-            {k:'idkult+musica', w:4},         
-            {k:'musica', w:4},                
-            {k:'adkult+idkult+musica', w:3},  
-            {k:'djsolo+musica', w:2},         
-            {k:'adkult+djsolo+musica', w:1}   
+            {k:'idkult+musica', w:30},        // 30%
+            {k:'musica', w:30},               // 30%
+            {k:'adkult+idkult+musica', w:20}, // 20%
+            {k:'djsolo+musica', w:16},        // 16%
+            {k:'adkult+djsolo+musica', w:4}   // 4%
         ]);
     } else {
+        // Demais rádios (Rock, Silverlake, Class Rock)
         seqType = weightedPick([
-            {k:'djsolo+musica', w:4},    
-            {k:'musica', w:4},           
-            {k:'id+musica', w:3},        
-            {k:'adv+id+musica', w:2},    
-            {k:'djsolo+id+musica', w:1}  
+            {k:'djsolo+musica', w:30},    // 30%
+            {k:'musica', w:30},           // 30%
+            {k:'id+musica', w:24},        // 24%
+            {k:'adv+id+musica', w:14},    // 14%
+            {k:'djsolo+id+musica', w:2}   // 2%
         ]);
+
+        // Lógica de fallback para "endto" (mantém prioridade sobre o sorteio acima se houver gancho)
         if(this.currentFollowupHint === 'toad') seqType = 'adv+id+musica';
         else if(this.currentFollowupHint === 'tonews') seqType = 'news+id+musica';
     }
